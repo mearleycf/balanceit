@@ -1,3 +1,42 @@
 ---
-
+import Layout from '../layouts/Layout.astro'
+import Dashboard from '../components/svelte/Dashboard.svelte'
 ---
+
+<Layout title="balanceit - Smart Budgeting">
+  <h1
+    class="text-brightpink-500 dark:text-brightpink-300 mb-6 text-3xl font-bold"
+  >
+    Welcome to balanceit
+  </h1>
+  <Dashboard client:load />
+</Layout>
+
+# Contents of src/components/Dashboard.svelte
+<script lang="ts">
+  let currentBalance = 435
+  let expectedBalance = 235
+  let nextIncomeDate = '2024-08-06'
+</script>
+
+<div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+  <div class="dark:bg-deepblue-400 rounded-lg bg-white p-4 shadow">
+    <h2 class="mb-2 text-lg font-semibold text-purple-500 dark:text-purple-300">
+      Current Balance
+    </h2>
+    <p class="text-3xl font-bold">${currentBalance.toFixed(2)}</p>
+  </div>
+  <div class="dark:bg-deepblue-400 rounded-lg bg-white p-4 shadow">
+    <h2
+      class="text-darkcyan-500 dark:text-darkcyan-300 mb-2 text-lg font-semibold"
+    >
+      Expected Balance Before Next Income
+    </h2>
+    <p class="text-3xl font-bold">${expectedBalance.toFixed(2)}</p>
+    <p class="text-warmgrey-500 dark:text-warmgrey-300 text-sm">
+      Next income on {nextIncomeDate}
+    </p>
+  </div>
+</div>
+
+<!-- Add more dashboard content here -->
