@@ -14,14 +14,19 @@
       "@pages/*": ["src/pages/*"],
       "@scripts/*": ["src/scripts/*"],
       "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"],
-    }
+      "@utils/*": ["src/utils/*"]
+    },
+    "types": ["svelte"]
   },
   "include": [
-    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.astro",
+    "src/**/*.svelte",
     ".eslintrc.cjs",
     "astro.config.mjs",
-    "tailwind.config.mjs"
+    "tailwind.config.mjs",
+    "svelte.config.js"
   ],
   "exclude": ["node_modules", "dist", ".yarn", ".vscode", "public"]
 }
